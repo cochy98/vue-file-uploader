@@ -1,0 +1,16 @@
+version: '3'
+services:
+    vue-uploader:
+        image: node
+        tty: true
+        working_dir: /var/www/html
+#        extra_hosts:
+#           - 'host.docker.internal:host-gateway'
+        ports:
+            - '${APP_PORT:-3001}:3001'
+#       environment:
+#          WWWUSER: '${WWWUSER}'
+#         XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
+#         XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
+        volumes:
+            - '.:/var/www/html'
